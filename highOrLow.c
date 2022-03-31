@@ -54,9 +54,9 @@ int main(){
 	};
 	makeRandomNumber(&randomNumber,difficulty);
 	printf("Guess: ");
-	scanf("%d",&guessNumber);
-	while(guessNumber!=randomNumber){
-		tried++;
+	scanf("%d",&guessNumber);//take input from user for guessed number.
+	while(guessNumber!=randomNumber){//if user guess wrong, it will ask again.
+		tried++;//increase the number of tries.
 		if(guessNumber>randomNumber){
 			printf("Too high!\n");
 		}else{
@@ -66,8 +66,8 @@ int main(){
 		scanf("%d",&guessNumber);
 	};
 	printf("You have won after trying %d times.\nDo you want to play again?\n1.Yes\n2.No\n",tried);
-	scanf("%d",&playAgain);
-	if(playAgain==1){
+	scanf("%d",&playAgain);//take input from user for play again.
+	if(playAgain==1){//if user want to play again, it will ask again.
 		main();
 	}else{
 		printf("Thank you for playing!\n");
