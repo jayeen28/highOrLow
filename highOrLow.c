@@ -43,6 +43,8 @@ int main(){
 	int randomNumber;//the number based on difficulity.
 	int guessNumber;//the number user guess.
 	int playAgain=0;//0-1(0 is no 1 is yes)
+	int tried=0;//the number of tries.
+
 	printf("Welcome to high or low game!!\n");
 	printf("Please select difficulty.\n 1.Easy (1-100)\n 2.Medium (1-1000)\n 3.Hard (1-10000)\n\n\nChoice: \n");
 	scanf("%d", &difficulty);//take input from user for difficulity level.
@@ -54,6 +56,7 @@ int main(){
 	printf("Guess: ");
 	scanf("%d",&guessNumber);
 	while(guessNumber!=randomNumber){
+		tried++;
 		if(guessNumber>randomNumber){
 			printf("Too high!\n");
 		}else{
@@ -62,7 +65,7 @@ int main(){
 		printf("Guess: ");
 		scanf("%d",&guessNumber);
 	};
-	printf("You got it!\nDo you want to play again?\n1.Yes\n2.No\n");
+	printf("You have won after trying %d times.\nDo you want to play again?\n1.Yes\n2.No\n",tried);
 	scanf("%d",&playAgain);
 	if(playAgain==1){
 		main();
