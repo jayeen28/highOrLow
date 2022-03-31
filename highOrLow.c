@@ -3,6 +3,29 @@
 #include<time.h>
 
 /**
+ * @brief This function is used to decide the random number range.
+ * 
+ * @param range The pointer of the variable range.
+ * @param difficulty The level of difficulty.
+ */
+void decideRange(int *range ,int difficulty){
+	switch(difficulty){
+		case 1:
+			*range=100;
+			break;
+		case 2:
+			*range=1000;
+			break;
+		case 3:
+			*range=10000;
+			break;
+		default:
+			*range=100;
+			break;
+	};
+};
+
+/**
  * @brief This function is used for making the random number based on difficulty.
  * 
  * @param randomNumber The number user has to guess.
@@ -10,22 +33,9 @@
  */
 void makeRandomNumber(int *randomNumber,int difficulty){
 	int range;
-	switch(difficulty){
-		case 1:
-			range=100;
-			break;
-		case 2:
-			range=1000;
-			break;
-		case 3:
-			range=10000;
-			break;
-		default:
-			range=100;
-			break;
-	};
+	decideRange(&range,difficulty);
 	srand(time(NULL));
-	
+	*randomNumber=rand()%range;
 };
 
 int main(){
@@ -39,5 +49,6 @@ int main(){
 		scanf("%d", &difficulty);
 	};
 	makeRandomNumber(&randomNumber,difficulty);
+	printf("%d\n", randomNumber);
 	return 0;
 };
