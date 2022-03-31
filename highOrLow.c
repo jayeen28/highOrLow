@@ -2,6 +2,8 @@
 #include<stdlib.h>
 
 int main(){
-	printf("Big Bang!");
+	for(int i=0;i<10;i++){
+		printf("\n %d",rand()%100+1);
+	};
 	return 0;
 };
