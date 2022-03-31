@@ -41,6 +41,8 @@ void makeRandomNumber(int *randomNumber,int difficulty){
 int main(){
 	int difficulty;//1-3(1 is easy 2 is medium 3 is hard)
 	int randomNumber;//the number based on difficulity.
+	int guessNumber;//the number user guess.
+	int playAgain=0;//0-1(0 is no 1 is yes)
 	printf("Welcome to high or low game!!\n");
 	printf("Please select difficulty.\n 1.Easy (1-100)\n 2.Medium (1-1000)\n 3.Hard (1-10000)\n\n\nChoice: \n");
 	scanf("%d", &difficulty);//take input from user for difficulity level.
@@ -49,6 +51,24 @@ int main(){
 		scanf("%d", &difficulty);
 	};
 	makeRandomNumber(&randomNumber,difficulty);
-	printf("%d\n", randomNumber);
+	printf("Guess: ");
+	scanf("%d",&guessNumber);
+	while(guessNumber!=randomNumber){
+		if(guessNumber>randomNumber){
+			printf("Too high!\n");
+		}else{
+			printf("Too low!\n");
+		};
+		printf("Guess: ");
+		scanf("%d",&guessNumber);
+	};
+	printf("You got it!\nDo you want to play again?\n1.Yes\n2.No\n");
+	scanf("%d",&playAgain);
+	if(playAgain==1){
+		main();
+	}else{
+		printf("Thank you for playing!\n");
+	};
+	int choice;
 	return 0;
 };
