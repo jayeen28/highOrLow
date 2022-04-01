@@ -73,6 +73,5 @@ int main(){
 	}else{
 		printf("Thank you for playing!\n");
 	};
-	int choice;
 	return 0;
 };
