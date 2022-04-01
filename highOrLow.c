@@ -46,7 +46,7 @@ int main(){
 	int tried=0;//the number of tries.
 
 	printf("Welcome to high or low game!!\n");
-	printf("Please select difficulty.\n 1.Easy (1-100)\n 2.Medium (1-1000)\n 3.Hard (1-10000)\n\n\nChoice: \n");
+	printf("Please select difficulty.\n 1.Easy (1-100)\n 2.Medium (1-1000)\n 3.Hard (1-10000)\n\n\nChoice: ");
 	scanf("%d", &difficulty);//take input from user for difficulity level.
 	while(difficulty<=0 || difficulty>3){//if user inputs more than 3, it will ask again.
 		printf("Please select a valid difficulty from 1 to 3.\n");
@@ -66,6 +66,7 @@ int main(){
 		scanf("%d",&guessNumber);
 	};
 	printf("You have won after trying %d times.\nDo you want to play again?\n1.Yes\n2.No\n",tried);
+	printf("Choice: ");
 	scanf("%d",&playAgain);//take input from user for play again.
 	if(playAgain==1){//if user want to play again, it will ask again.
 		main();
